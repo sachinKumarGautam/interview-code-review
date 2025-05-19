@@ -31,3 +31,21 @@ const fetchDataWithoutErrorHandling = async () => {
   console.log(data);
   return data;
 };
+
+// Best Practices:  Chaining Promises without proper error handling
+const fetchDataChainedPromises = () => {
+  fetch("https://example.com/api/step1")
+    .then(response => response.json())
+    .then(data1 => {
+      console.log("Data from step 1:", data1);
+      return fetch("https://example.com/api/step2"); // Potential error here
+    })
+    .then(response => response.json())
+    .then(data2 => {
+      console.log("Data from step 2:", data2);
+      // Missing a .catch block!
+      return fetch("https://example.com/api/step3");
+    })
+    .then(response => response.json())
+    .then(data3 => console.log("Data from step 3", data3));
+};

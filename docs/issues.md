@@ -11,11 +11,11 @@ This document tracks the issues introduced in this Pull Request, categorized by 
 
 ## Total Issues
 
-| File                          | Security | Performance | Best Practices | Code Quality | Total |
-| ----------------------------- | -------- | ----------- | -------------- | ------------ | ----- |
-| `src/components/Greeting.tsx` | 0        | 1           | 1              | 1            | 3     |
-| `src/utils/security.ts`       | 1        | 0           | 0              | 0            | 1     |
-| `src/utils/performance.ts`    | 0        | 1           | 0              | 0            | 1     |
-| `src/utils/bestPractices.ts`  | 0        | 0           | 2              | 0            | 2     |
-| `src/App.tsx`                 | 0        | 0           | 0              | 1            | 1     |
-| **Total**                     | **1**    | **2**       | **3**          | **2**        | **8** |
+| File                          | Security | Performance | Best Practices | Code Quality | Total  |
+| ----------------------------- | -------- | ----------- | -------------- | ------------ | ------ |
+| `src/components/Greeting.tsx` | 0        | 1           | 1              | 1            | 3      |
+| `src/utils/security.ts`       | 1        | 0           | 0              | 0            | 1      |
+| `src/utils/performance.ts`    | 0        | 1           | 0              | 0            | 1      |
+| `src/utils/bestPractices.ts`  | 0        | 0           | 4              | 0            | 4      |
+| `src/App.tsx`                 | 0        | 0           | 0              | 1            | 1      |
+| **Total**                     | **1**    | **2**       | **5**          | **2**        | **10** |
