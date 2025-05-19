@@ -1,15 +1,21 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 interface GreetingProps {
   name: string;
 }
 
 const Greeting: React.FC<GreetingProps> = ({ name }) => {
-  // Intentionally inefficient way to capitalize the first letter
-  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+  //  Performance: Re-rendering the same string on every render.
+  const greetingMessage = `Hello, ${name}!`;
 
-  // Potential accessibility issue - using div for a heading
-  return <div>Hello, {capitalizedName}!</div>;
+  return (
+    <div>
+      {greetingMessage}
+      <Button onClick={() => alert("Clicked!")}>Click Me</Button>{" "}
+      {/* Missing Accessibility Label */}
+    </div>
+  );
 };
 
 export default Greeting;
