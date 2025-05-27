@@ -24,7 +24,6 @@ const Greeting: React.FC<GreetingProps> = ({ name }) => {
       >
         Click Me
       </Button>{" "}
-      {/* Missing Accessibility Label, Fixed */}
       <p>Welcome, {name.trim()}!</p>
     </div>
   );
