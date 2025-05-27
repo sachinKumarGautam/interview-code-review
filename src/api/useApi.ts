@@ -1,6 +1,5 @@
-import { User } from "../types"; // Assume this type exists
+import { User } from "../types";
 
-// Best Practices:  Hardcoded API endpoint.  Should come from config.
 const API_ENDPOINT = "https://example.com/api";
 
 export const getUser = async (id: string): Promise<User> => {

@@ -6,7 +6,6 @@ interface GreetingProps {
 }
 
 const Greeting: React.FC<GreetingProps> = ({ name }) => {
-  // Performance: Re-rendering the same string on every render.
   const greetingMessage = `Hello, ${name}!`;
   const [localName, setLocalName] = useState(name);
 

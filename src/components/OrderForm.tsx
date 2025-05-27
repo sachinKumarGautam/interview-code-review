@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button"; // Assuming this exists
+import { Button } from "@/components/ui/button";
 
 interface Order {
   productId: string;
@@ -18,10 +18,8 @@ const OrderForm: React.FC = () => {
     setIsSubmitting(true);
     setSubmissionStatus("idle");
     try {
-      // Simulate order submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log("Order submitted:", order);
-      // Best Practices: Missing reset of form state after successful submission.
       setOrder({ productId: "", quantity: 0 });
       setSubmissionStatus("success");
     } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getUser } from "../api/userApi";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"; // Assuming these exist
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface User {
   id: string;
@@ -41,7 +41,7 @@ const UserProfile: React.FC<{ userId: string }> = ({ userId }) => {
       <>
         <p>User not found.</p>
       </>
-    ); // Code Quality: Inconsistent return type.  Should be a Fragment.
+    );
   }
 
   return (

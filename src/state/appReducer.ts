@@ -1,4 +1,3 @@
-// state/appReducer.ts
 interface AppState {
   count: number;
   message: string;
@@ -22,7 +21,7 @@ const appReducer = (state = initialState, action: Action): AppState => {
       return { ...state, count: state.count - 1 };
     case "SET_MESSAGE":
       if (typeof action.payload === "string") {
-        return { ...state, message: action.payload }; // Code Quality:  No validation of payload.
+        return { ...state, message: action.payload };
       } else {
         return { ...state, message: "" };
       }

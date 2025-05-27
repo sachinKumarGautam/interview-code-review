@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// Performance: Expensive calculation on every render.
 export const ExpensiveComponent = () => {
   const [data, setData] = useState<number[]>([]);
 
@@ -9,7 +8,6 @@ export const ExpensiveComponent = () => {
     setData(initialData);
   }, []);
 
-  // Simulate an expensive calculation (e.g., filtering, mapping, reducing)
   const processedData = data
     .filter(item => item % 2 === 0)
     .map(item => item * 2)

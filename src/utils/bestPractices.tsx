@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Todo } from "../components/App";
 
-// Issue: Component with state that should be props
 export const TodoWithConstantState: React.FC = () => {
-  // Issue: State that should be props
   const [todoCount, setTodoCount] = useState(0);
 
   return (
@@ -14,16 +12,14 @@ export const TodoWithConstantState: React.FC = () => {
   );
 };
 
-// Issue: Missing dependencies in useEffect
 export const TodoWithMissingDependencies: React.FC<{ todos: Todo[] }> = ({
   todos
 }) => {
   const [filteredTodos, setFilteredTodos] = useState<Todo[]>([]);
 
-  // Issue: Missing 'todos' in dependencies array
   useEffect(() => {
     setFilteredTodos(todos.filter((todo) => todo.completed));
-  }, []); // Should include 'todos'
+  }, []);
 
   return (
     <div>
@@ -32,7 +28,6 @@ export const TodoWithMissingDependencies: React.FC<{ todos: Todo[] }> = ({
   );
 };
 
-// Issue: Promise chain without proper error handling
 export const fetchTodosChainedPromises = () => {
   fetch("/api/todos")
     .then((response) => response.json())
@@ -44,5 +39,4 @@ export const fetchTodosChainedPromises = () => {
     .then((stats) => {
       console.log(stats);
     });
-  // Missing .catch() block
 };

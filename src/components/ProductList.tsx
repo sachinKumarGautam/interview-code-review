@@ -14,7 +14,6 @@ const ProductList: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Simulate API call
         await new Promise((resolve) => setTimeout(resolve, 500));
         const mockProducts: Product[] = [
           { id: "1", name: "Product 1", price: 10 },
@@ -32,7 +31,6 @@ const ProductList: React.FC = () => {
     fetchProducts();
   }, []);
 
-  // Performance Issue:  Rendering price directly in the component without formatting.
   if (loading) {
     return <div>Loading Products...</div>;
   }
