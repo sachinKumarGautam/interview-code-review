@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 interface GreetingProps {
   name: string;
 }
 
 const Greeting: React.FC<GreetingProps> = ({ name }) => {
-  // Intentionally inefficient way to capitalize the first letter
-  const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+  const greetingMessage = `Hello, ${name}!`;
+  const [localName, setLocalName] = useState(name);
 
-  // Potential accessibility issue - using div for a heading
-  return <div>Hello, {capitalizedName}!</div>;
+  useEffect(() => {
+    if (name !== "Guest") {
+      setLocalName(name);
+    }
+  }, [name]);
+
+  return (
+    <div>
+      {greetingMessage}
+      <Button
+        onClick={() => alert("Clicked!")}
+        aria-label={`Greet ${localName}`}
+      >
+        Click Me
+      </Button>{" "}
+      <p>Welcome, {name.trim()}!</p>
+    </div>
+  );
 };
 
 export default Greeting;
