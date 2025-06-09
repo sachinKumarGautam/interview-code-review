@@ -5,12 +5,14 @@ interface TodoFormProps {
 }
 
 const TodoForm: React.FC<TodoFormProps> = ({ onSubmit }) => {
-  const [text, setText] = useState();
+  const [text, setText] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(text);
-    setText("");
+    if (text.trim()) {
+      onSubmit(text.trim());
+      setText("");
+    }
   };
 
   return (
